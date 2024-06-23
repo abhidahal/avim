@@ -1,6 +1,10 @@
 vim.g.mapleader = " "
 local keymap = vim.keymap
 
+-- /home/abhidahal/.local/share/nvim/lazy/LazyVim/lazygit.lua
+-- :174
+--     os.execute("xdg-open " .. remote.url)
+
 -- Quick Exit
 keymap.set("i", "jk", "<ESC>", { desc = "Exit Insert" })
 
