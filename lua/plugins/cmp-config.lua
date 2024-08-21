@@ -116,7 +116,7 @@ return {
         ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         -- ["<Tab>"] = cmp.mapping.select_next_item(),
-        ["<Leader>"] = cmp.mapping.confirm({ select = false }),
+        -- ["<Leader>"] = cmp.mapping.confirm({ select = false }),
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
