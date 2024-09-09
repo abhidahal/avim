@@ -90,6 +90,7 @@ return {
       end, { "i", "s" }),
     })
 
+    -- sd
     return {
       auto_brackets = {}, -- configure any filetype to auto add brackets
       completion = {
