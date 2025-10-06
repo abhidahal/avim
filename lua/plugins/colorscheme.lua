@@ -1,5 +1,11 @@
 return {
   {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight",
+    },
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
@@ -7,6 +13,13 @@ return {
     config = function()
       require("catppuccin").setup({
         transparent_background = true,
+        float = {
+          solid = true,
+          transparent = true,
+        },
+        integrations = {
+          blink_cmp = true,
+        },
         color_overrides = {
           all = {
             rosewater = "#d4aba6",

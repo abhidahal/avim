@@ -10,7 +10,7 @@ return {
       theme = "Coldark-Dark",
 
       output = function()
-        return "~/Pictures/CodeSS/" .. os.date("!%Y-%m-%dT%H-%M-%S") .. "_code.png"
+        return "~/Pictures/Code/" .. os.date("!%Y-%m-%dT%H-%M-%S") .. "_code.png"
       end,
     })
   end,

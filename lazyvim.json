@@ -1,14 +1,10 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.copilot",
-    "lazyvim.plugins.extras.ai.copilot-chat",
-    "lazyvim.plugins.extras.editor.inc-rename",
-    "lazyvim.plugins.extras.lang.tailwind",
-    "lazyvim.plugins.extras.util.dot",
-    "lazyvim.plugins.extras.util.octo"
+
   ],
+  "install_version": 8,
   "news": {
-    "NEWS.md": "7429"
+    "NEWS.md": "11866"
   },
-  "version": 7
+  "version": 8
 }

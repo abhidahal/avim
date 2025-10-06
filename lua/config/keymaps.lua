@@ -1,17 +1,12 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+--
 vim.g.mapleader = " "
-local Util = require("lazyvim.util")
 local map = LazyVim.safe_keymap_set
-
--- Quick Exit
-map("i", "jk", "<ESC>", { desc = "Exit Insert" })
 
 map("n", "<leader>O", "O<ESC>", { desc = "Create new line above" })
 map("n", "<leader>o", "o<ESC>", { desc = "Create new line below" })
-
--- Select all
--- keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
--- keymap.set("i", "<C-a>", "<ESC>gg<S-v>G", { desc = "Select all" })
-
 
 -- Move Lines
 -- keymap.set("n", "<A-down>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -25,15 +20,9 @@ map("n", "<leader>o", "o<ESC>", { desc = "Create new line below" })
 map("v", "<leader>cp", ":Silicon<return>", { desc = "Screenshot" })
 map("n", "<leader>cp", "V:Silicon<return>", { desc = "Screenshot" })
 
--- InsertMode Ctrl Backspace
--- keymap.set("i", "<C-bs>", "<ESC>ciw", { desc = "Delete" })
-
 -- Paste without overwriting register
--- keymap.set("v", "p", '"_dP')
+map("v", "<leader>p", '"_dP')
 
 -- Keep window centered when going up/down
--- keymap.set("n", "n", "nzzzv")
--- keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-/>", function()
-  Util.terminal(nil, { border = "rounded" })
-end, { desc = "Term with border" })
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
