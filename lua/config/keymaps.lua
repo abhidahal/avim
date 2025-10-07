@@ -26,3 +26,6 @@ map("v", "<leader>p", '"_dP')
 -- Keep window centered when going up/down
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
+map("n", "<leader>;", function()
+  Snacks.picker.resume()
+end, { desc = "Resume" })
