@@ -5,24 +5,9 @@ return {
     {
       "<leader><space>",
       function()
-        Snacks.picker.smart({
-          win = {
-            input = {
-              keys = {
-                ["I"] = "toggle_ignored",
-                ["H"] = "toggle_hidden",
-              },
-            },
-            list = {
-              keys = {
-                ["I"] = "toggle_ignored",
-                ["H"] = "toggle_hidden",
-              },
-            },
-          },
-        })
+        Snacks.picker.smart()
       end,
-      desc = "Smart Find Files",
+      desc = "Find Files",
     },
     {
       "<leader>.",
@@ -118,6 +103,30 @@ return {
 
   ---@type snacks.Config
   opts = {
+    picker = {
+      toggles = {
+        ignored = "I",
+        hidden = "H",
+        follow = "f",
+        modified = "m",
+        regex = { icon = "R", value = false },
+      },
+
+      win = {
+        input = {
+          keys = {
+            ["I"] = "toggle_ignored",
+            ["H"] = "toggle_hidden",
+          },
+        },
+        list = {
+          keys = {
+            ["I"] = "toggle_ignored",
+            ["H"] = "toggle_hidden",
+          },
+        },
+      },
+    },
     dashboard = {
       sections = {
         {
