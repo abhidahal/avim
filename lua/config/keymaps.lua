@@ -1,7 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
---
+
 vim.g.mapleader = " "
 local map = LazyVim.safe_keymap_set
 
@@ -26,6 +26,3 @@ map("v", "<leader>p", '"_dP')
 -- Keep window centered when going up/down
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
-map("n", "<leader>;", function()
-  Snacks.picker.resume()
-end, { desc = "Resume" })

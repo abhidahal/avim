@@ -3,6 +3,28 @@ return {
   ---@type snacks.Config
   keys = {
     {
+      "<leader><space>",
+      function()
+        Snacks.picker.smart({
+          win = {
+            input = {
+              keys = {
+                ["I"] = "toggle_ignored",
+                ["H"] = "toggle_hidden",
+              },
+            },
+            list = {
+              keys = {
+                ["I"] = "toggle_ignored",
+                ["H"] = "toggle_hidden",
+              },
+            },
+          },
+        })
+      end,
+      desc = "Smart Find Files",
+    },
+    {
       "<leader>.",
       function()
         Snacks.scratch()
@@ -10,11 +32,87 @@ return {
       desc = "Toggle Scratch Buffer",
     },
     {
+      "<leader>ge",
+      function()
+        local root = Snacks.git.get_root()
+        if not root then
+          Snacks.notify("Not in a git repository", "warn")
+          return
+        end
+        Snacks.explorer({
+          cwd = root,
+          finder = "git_status",
+          format = "git_status",
+          preview = "git_status",
+          tree = true,
+          git_status = true,
+          git_status_open = true,
+          diagnostics = false,
+          follow_file = false,
+          focus = "list",
+          auto_close = false,
+          jump = { close = false },
+          layout = { preset = "sidebar", preview = "main" },
+          matcher = { sort_empty = false, fuzzy = false },
+          win = {
+            list = {
+              keys = {
+                ["<BS>"] = "explorer_up",
+                ["l"] = "confirm",
+                ["h"] = "explorer_close",
+                ["a"] = "explorer_add",
+                ["d"] = "explorer_del",
+                ["r"] = "explorer_rename",
+                ["c"] = "explorer_copy",
+                ["m"] = "explorer_move",
+                ["o"] = "explorer_open",
+                ["P"] = "toggle_preview",
+                ["y"] = { "explorer_yank", mode = { "n", "x" } },
+                ["p"] = "explorer_paste",
+                ["u"] = "explorer_update",
+                ["<c-c>"] = "tcd",
+                ["<leader>/"] = "picker_grep",
+                ["<c-t>"] = "terminal",
+                ["."] = "explorer_focus",
+                ["I"] = "toggle_ignored",
+                ["H"] = "toggle_hidden",
+                ["Z"] = "explorer_close_all",
+                ["]g"] = "explorer_git_next",
+                ["[g"] = "explorer_git_prev",
+              },
+            },
+          },
+        })
+      end,
+      desc = "Git Explorer (Changed Files Only)",
+    },
+    {
       "<leader>>",
       function()
         Snacks.scratch.select()
       end,
       desc = "Select Scratch Buffer",
+    },
+    {
+      "<leader>;",
+      function()
+        Snacks.picker.resume()
+      end,
+      { desc = "Resume" },
+    },
+    {
+      "<leader>v",
+      function()
+        Snacks.picker.cliphist()
+      end,
+      { desc = "Clipboard History" },
+    },
+    {
+      "<leader>gc",
+      function()
+        Snacks.picker.git_branches()
+      end,
+      desc = "Git Branches",
     },
   },
 
